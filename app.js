@@ -33,7 +33,7 @@ MongoDBConnection.getConnection((error, connection) => {
         genid: function (req) {
             return uuidv4();
         },
-        secret: '0SddfAS9fAdFASASSFwdVCXLZJKHfss',
+        secret: process.env.SESSION_SECRET || '0SddfAS9fAdFASASSFwdVCXLZJKHfss',
         resave: false,
         saveUninitialized: true,
     }));

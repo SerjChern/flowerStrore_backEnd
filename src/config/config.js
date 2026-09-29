@@ -1,10 +1,10 @@
 const config = {
-    secret: 'd1UCyUDKC0TiWhDbs6U5QWiez6',
-    env: process.env.ENV,
-    port: 3000,
+    secret: process.env.JWT_SECRET || 'd1UCyUDKC0TiWhDbs6U5QWiez6',
+    env: process.env.ENV || 'development',
+    port: process.env.PORT || 3000,
     db: {
-        dbUrl: 'mongodb://127.0.0.1:27017',
-        dbName: 'im',
+        dbUrl: process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017',
+        dbName: process.env.MONGODB_DB || 'im',
         dbHost: 'localhost',
         dbPort: 27017,
     },
